@@ -21,6 +21,8 @@ source "$path/srcs/errors.sh"
 	if [ -z $1 ]
 	then
 		name_a=$(cat $path/log | grep "Wallpaper" | cut -d " " -f2)
+	else
+		name_a=$1
 	fi
 
 #  ___________________________________________________________  #
@@ -44,6 +46,7 @@ source "$path/srcs/errors.sh"
 # |___________________________________________________________| #
 	while :
 	do
+		name_a=$(cat $path/log | grep "Wallpaper" | cut -d " " -f2)
 		# --------------------------------------------------------- #
 		source "$path/srcs/get_hour.sh"
 		# --------------------------------------------------------- #
