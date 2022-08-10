@@ -24,6 +24,7 @@ source "$path/srcs/errors.sh"
 	else
 		name_a=$1
 	fi
+	source "$path/srcs/get_extention.sh" $name_a
 
 #  ___________________________________________________________  #
 # |                                                           | #
@@ -35,7 +36,7 @@ source "$path/srcs/errors.sh"
 # |                                                           | #
 # |                     First Execution                       | #
 # |___________________________________________________________| #
-	source "$path/srcs/get_name_wallpaper.sh" $name_a
+	source "$path/srcs/get_name_wallpaper.sh" $name_a $ext
 	put_message
 	execute $full_name
 	if [[ "$min" -ne "00" ]] ; then sleep $diff ; fi
@@ -50,7 +51,7 @@ source "$path/srcs/errors.sh"
 		# --------------------------------------------------------- #
 		source "$path/srcs/get_hour.sh"
 		# --------------------------------------------------------- #
-		source "$path/srcs/get_name_wallpaper.sh" $name_a
+		source "$path/srcs/get_name_wallpaper.sh" $name_a $ext
 		# --------------------------------------------------------- #
 		put_message
 		execute $full_name
